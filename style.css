@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(90deg,#444 0%,#000 50%,#444 100%);
+  overflow: hidden;
+}
+
+.can {
+  position: absolute;
+  width: 300px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  --left:230px;
+  display: flex;
+}
+
+.can .can-img {
+  position: absolute;
+  width: 250px;
+  background: var(--img) var(--left),url(./images/can-img.png);
+  background-size: auto 100%;
+  aspect-ratio: 2/4;
+  left: 50%;
+  transform: translateX(-50%);
+  background-blend-mode: multiply;
+  mask-image: url(./images/can-img.png);
+  mask-size: auto 100%;
+  transition: 0.7s;
+}
+
+.can:hover .can-img {
+  transform: translate(-50%,-20%);
+  --left:-1000px;
+}
+
+.can .can-img:nth-child(2){
+  opacity: 0;
+}
+
+
+.can:hover .can-img:nth-child(2){
+  opacity: 1;
+}
